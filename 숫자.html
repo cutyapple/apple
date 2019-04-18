@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0; padding: 0;
+        }
+        .title{
+            color: aqua;
+            background-color:maroon;
+            width: 100%;
+            top:0px;
+            height: 270px;
+            margin: 0px auto 0px auto;
+            text-align: center;
+            font-size: 100px;   
+        }
+
+        h1 {
+        position: relative;
+        left: 50%;
+        animation-duration: 3s;
+        animation-name: slidein;
+        }
+
+        @keyframes slidein {
+        from {
+            margin-left: 50%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+
+    h2 {
+        position: relative;
+        left: 50%;
+        animation-duration: 3s;
+        animation-name: slidein;
+        color: cornflowerblue;
+        }
+
+        @keyframes slidein {
+        from {
+            margin-left: 50%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+
+     h3{
+        position: relative;
+        left: 50%;
+        animation-duration: 3s;
+        animation-name: slidein;
+        }
+
+        @keyframes slidein {
+        from {
+            margin-left: 50%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+    .ur{
+        position: relative;
+        top:150px;
+        left: 50px;
+    }
+    .uc{
+        position: relative;
+        top:150px;
+        left: 50px;
+    }
+    .up{
+        position: relative;
+        top:150px;
+        left: 50px;
+    }
+    .cr{
+        position: relative;
+        top:150px;
+        right: -50px;
+    }
+    .cc{
+        position: relative;
+        top:150px;
+        right: -50px;
+    }
+    .cp{
+        position: relative;
+        top:150px;
+        right: -50px;
+    }
+    </style>
+
+</head>
+<body>
+    <div class = "title">가위바위보 게임</div>
+    <p><h1>규칙</h1>
+        <h2>가위, 바위, 보
+        <br>셋 중 하나를 골라
+        <br>아래의 칸에 입력하세요.
+        </h2>
+    </p>
+
+    <h3><input type="text" id="input_text"/></h3>
+    <p id = "result"></p>                       
+    <div id="if_correct"></div>
+        
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>axios.get("https://api.github.com/users/junu126").then(res=>{console.log(res)}).catch(err=>{console.log(err)})</script>
+
+    <script src="숫자.js/숫자.JS"></script>  
+</body>
+
+</html>
