@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <input type="text" id="text_new" onkeypress="check(event)">
+    <div id = "saved_id"></div>
+    <div id = "saved_name"></div>
+    <a id = "adr"></a>
+    <div id = "bio"></div>
+    <div id = "warning"></div>
+</head>
+<body>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <script>
+        var text_new = document.getElementById("text_new");
+        var saved_id = document.getElementById("saved_id");
+        var saved_name = document.getElementById("saved_name");
+        var adr = document.getElementById("adr");
+        var bio = document.getElementById("bio");
+        var warning = document.getElementById("warning");
+        
+
+
+        function check(event){
+            if(event.code==="Enter") {
+                warning.innerText='';
+                alert("okay");
+                axios.get(`https://api.github.com/users/${text_new.value}`).then(res=>{console.log(res);
+                saved_id.innerText=res.data.login; saved_name.innerText=res.data.name;
+                adr.innerText='이동하기';
+                adr.href=res.data.html_url;
+                bio.innerText=res.data.bio;
+                }).catch(err=>{console.log(err)
+                warning.innerText="존재하지 않는 사용자입니다."
+                adr.innerText='';
+                bio.innerText='';
+                saved_id.innerText='';
+                saved_name.innerText='';
+                text_new.innerText='';}
+                );
+            };
+        };
+        </script>
+</body>
+</html>
